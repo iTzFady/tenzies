@@ -54,12 +54,10 @@ export default function App() {
       hold={holdDice}
     />
   ));
-
+  const { width, height } = useWindowSize();
   return (
     <main>
-      {gameWon ? (
-        <Confetti width={useWindowSize.width} height={useWindowSize.height} />
-      ) : null}
+      {gameWon ? <Confetti width={width} height={height} /> : null}
       <div aria-live="polite" className="sr-only">
         {gameWon && (
           <p>Congratulations! You won! Press "New Game" to start again.</p>
